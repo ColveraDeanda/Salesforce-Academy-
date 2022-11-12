@@ -8,3 +8,10 @@
 string tempvar = 'Enter_your_name_here';
 System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
+
+dataPrimitiveTypes.dataTypes();
+
+Flower2 myFlower = new Flower2('Green', 4.445, 3.14, 100);
+myFlower.printFlower();
+
+Operators myOp = new Operators();
