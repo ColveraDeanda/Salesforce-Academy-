@@ -1,0 +1,117 @@
+<template>
+  <div if:true={isStandard}>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+      aria-label="Example default base table of Opportunities">
+      <thead>
+        <tr class="slds-line-height_reset">
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Names">Names</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Surname">Surname</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Country">Country</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="City">City</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Requieres Visa">Requires Visa</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Names">
+            <div class="slds-truncate" title="Names">{names}</div>
+          </td>
+          <td data-label="Surname">
+            <div class="slds-truncate" title="Surname">{surname}</div>
+          </td>
+          <td data-label="country">
+            <div class="slds-truncate" title="country">{country}</div>
+          </td>
+          <td data-label="city">
+            <div class="slds-truncate" title="city">{city}</div>
+          </td>
+          <td data-label="requiresVisa">
+            <div class="slds-truncate" title="requiresVisa">{requiresVisa}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <!-- Edit Form Standard starts here  -->
+    <lightning-card title="Hire Details">
+      <div class="slds-m-around_medium">
+        <lightning-record-form object-api-name={objectApiName} record-id={recordId} fields={fieldListStandard}
+          onsuccess={handleHireUpdate} columns="2">
+        </lightning-record-form>
+      </div>
+    </lightning-card>
+    <!-- Edit Form Standard ends here  -->
+  </div>
+
+  <!-- IT Form starts here -->
+  <div if:false={isStandard}>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+      aria-label="Example default base table of Opportunities">
+      <thead>
+        <tr class="slds-line-height_reset">
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Names">Names</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Surname">Surname</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Country">Country</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="City">City</div>
+          </th>
+          <th class="" scope="col">
+            <div class="slds-truncate" title="Requieres Visa">Requires Visa</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Names">
+            <div class="slds-truncate" title="Names">{names}</div>
+          </td>
+          <td data-label="Surname">
+            <div class="slds-truncate" title="Surname">{surname}</div>
+          </td>
+          <td data-label="country">
+            <div class="slds-truncate" title="country">{country}</div>
+          </td>
+          <td data-label="city">
+            <div class="slds-truncate" title="city">{city}</div>
+          </td>
+          <td data-label="requiresVisa">
+            <div class="slds-truncate" title="requiresVisa">{requiresVisa}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <!-- Edit IT Form starts here  -->
+    <lightning-card title="Hire Details">
+      <div class="slds-m-around_medium">
+        <lightning-record-form object-api-name={objectApiName} record-id={recordId} fields={fieldList}
+          onsuccess={handleHireUpdate} columns="2">
+        </lightning-record-form>
+      </div>
+    </lightning-card>
+    <!-- Edit IT Form ends here  -->
+  </div>
+
+  <!-- IT Form ends here -->
+
+
+
+</template>

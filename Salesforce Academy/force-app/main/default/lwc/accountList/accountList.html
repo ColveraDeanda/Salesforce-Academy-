@@ -1,0 +1,16 @@
+<template>
+
+    <lightning-card title="Account List" icon-name="custom:custom22">
+        <div class="slds-m-around_medium">
+            <template if:true={errors}>
+                <p>{errors}</p>
+            </template>
+            <template if:true={data}>
+                <lightning-datatable key-field="Id" data={data} columns={columns}>
+                </lightning-datatable>
+            </template>
+        </div>
+
+    </lightning-card>
+
+</template>

@@ -1,0 +1,29 @@
+<template>
+
+    <lightning-card title="Basic search tool with Datatable using Imperative Method" icon-name="custom:custom57">
+        <div class="slds-m-around_medium">
+            <lightning-button label={displayButtonMsj} onclick={displayData}></lightning-button>
+            <div if:true={showData}>
+                <lightning-input label="Enter a value" onchange={getUserInput}></lightning-input>
+                <br>
+                <lightning-button label="Search" onclick={searchAcccount}></lightning-button>
+
+                <div if:true={noResults}>
+                    <h3>No data available for <strong>{searchval}</strong>. Please try again. :)</h3>
+                </div>
+                <div if:false={noResults}>
+                    <lightning-datatable key-field="Id" data={data} columns={columns}>
+                    </lightning-datatable>
+                </div>
+
+            </div>
+
+            <div if:false={showData}>
+                <h3>Component not available. <strong>Please display component clicking in button</strong></h3>
+            </div>
+        </div>
+    </lightning-card>
+
+
+
+</template>

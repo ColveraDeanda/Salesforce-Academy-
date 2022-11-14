@@ -1,0 +1,32 @@
+<template>
+
+    <lightning-card title="My First Web Component" icon-name="custom:custom40">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Click to display a mesage." onclick={handleChange}></lightning-button>
+
+            <lightning-input label="Enter a value" value={greeting} onchange={handleChangeEvent}></lightning-input>
+
+            <p>{greeting}</p>
+
+
+            <!-- *** Simple for loop for Multiple accounts  **** -->
+            <lightning-card title="Fetching Data From Controller Class decorating a property"
+                icon-name="custom:custom63">
+                <div class="slds-m-around_medium">
+                    <template if:true={accts.data}>
+                        <template for:each={accts.data} for:item="acc">
+                            <p key={acc.Id}> <strong>Account name:</strong> {acc.Name} | <strong>Account
+                                    Number:</strong>
+                                {acc.Phone}</p>
+                        </template>
+                    </template>
+                    <template if:true={accts.error}>
+                        {accts.error}
+                    </template>
+                </div>
+            </lightning-card>
+        </div>
+    </lightning-card>
+
+
+</template>

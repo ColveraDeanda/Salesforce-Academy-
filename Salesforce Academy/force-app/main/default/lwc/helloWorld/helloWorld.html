@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="HelloWorld" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+          <p>Hello, {greeting}!</p>
+          <lightning-input label="Name" value={greeting} onchange={changeHandler}></lightning-input>
+        </div>
+      </lightning-card>
+
+    <!-- <div id="waiting" if:false={ready}>Loading…</div>  Loading if ready is false -->
+    <div id="display" if:true={ready}> <!-- Show div if ready is true -->
+        <div>Name: {name}</div>
+        <div>Description: {description}</div>
+        <lightning-badge label={material}></lightning-badge>
+        <lightning-badge label={category}></lightning-badge>
+        <div>Price: {price}</div>
+        <div><img src={pictureUrl}/></div>
+    </div>
+</template>
